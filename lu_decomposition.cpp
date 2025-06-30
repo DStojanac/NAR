@@ -1,18 +1,17 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
-#include <omp.h> // Required for OpenMP
-#include <algorithm> // Required for std::min
+#include <omp.h> 
+#include <algorithm> 
 
-// Using namespaces for cleaner code
+
 using namespace std;
 
 // --- Configuration ---
-const int N = 1024;    // Matrix size (increased for a more meaningful benchmark)
-const int BS = 64;     // Block size. Good for cache performance. Should be a divisor of N.
+const int N = 1024;    // Matrix size 
+const int BS = 64;     // Block size
 
-// Global matrices for simplicity in this example
-// Using vectors for easier memory management, though static arrays are also fine.
+
 vector<vector<double>> A(N, vector<double>(N));
 vector<vector<double>> L(N, vector<double>(N));
 vector<vector<double>> U(N, vector<double>(N));
